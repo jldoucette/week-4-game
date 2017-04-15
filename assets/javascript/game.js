@@ -77,22 +77,22 @@ function placeDiamonds() {
       console.log("supposed to have placed diamonds");
 
         var targetMessage=$("#target");
-        targetMessage.html("<h2>Target Score: " + targetScoreValue +"</h2>");
+        targetMessage.html("<h2><strong>Target Score: </strong>" + targetScoreValue +"</h2>");
         targetMessage.append(targetMessage);
         var currentScoreMessage=$("#current");
-        currentScoreMessage.html("<h2 id='current-score'>Current Score: " + currentScore +"</h2>");
+        currentScoreMessage.html("<h2 id='current-score'><strong>Current Score: </strong>" + currentScore +"</h2>");
         currentScoreMessage.append(currentScoreMessage);
         
         var scoreUpdate=$("#wins");
-        scoreUpdate.html("<h2>Wins: "+ win + "</h2>");
+        scoreUpdate.html("<h2><strong>Wins: </strong>"+ win + "</h2>");
         scoreUpdate.append(scoreUpdate);
         
         var scoreUpdate=$("#losses");
-        scoreUpdate.html("<h2>Losses: "+ lose + "</h2>");
+        scoreUpdate.html("<h2><strong>Losses: </strong>"+ lose + "</h2>");
         scoreUpdate.append(scoreUpdate);
 
         var replayTrigger=$("#replay");
-        replayTrigger.html("<h2>Game in progress! Start Guessing!</h2>");
+        replayTrigger.html("<h2><em>Game in progress! Start Guessing!</em></h2>");
         replayTrigger.append(replayTrigger);
 
 
@@ -104,7 +104,7 @@ function placeDiamonds() {
         currentScore=currentScore+buttonValue;
         console.log("CurrentScore is now "+currentScore);
         var currentScoreMessage=$("#current");
-        currentScoreMessage.html("<h2 id='current-score'>Current Score: " + currentScore +"</h2>");
+        currentScoreMessage.html("<h2 id='current-score'><strong>Current Score: </strong>" + currentScore +"</h2>");
         currentScoreMessage.append(currentScoreMessage);
         checkScore();
       });
@@ -116,23 +116,25 @@ function placeDiamonds() {
   function checkScore() {
     console.log("checking score");
     if (currentScore==targetScoreValue) {
+     $(".diamond-button").off("click"); 
      var winMessage=$("#target");
-     winMessage.html("<h2>You Win!!!</h2>");
+     winMessage.html("<h2 id='winStyle'><strong>You Win!!!</strong></h2>");
      winMessage.append(winMessage);
      win++;
        var scoreUpdate=$("#wins");
-     scoreUpdate.html("<h2>Wins: "+ win + "</h2>");
+     scoreUpdate.html("<h2><strong>Wins: </strong>"+ win + "</h2>");
      scoreUpdate.append(scoreUpdate);
      promptNewGame();
 
     }  
     else if (currentScore>targetScoreValue) {
+      $(".diamond-button").off("click");
       var winMessage=$("#target");
-     winMessage.html("<h2>Sorry you lost!!!</h2>");
+     winMessage.html("<h2 id='loseStyle'><strong>Sorry you lost!!!</strong></h2>");
      winMessage.append(winMessage);
      lose++;
          var scoreUpdate=$("#losses");
-     scoreUpdate.html("<h2>Losses: "+ lose + "</h2>");
+     scoreUpdate.html("<h2><strong>Losses: </strong>"+ lose + "</h2>");
      scoreUpdate.append(scoreUpdate);
      promptNewGame();
     }
@@ -140,7 +142,7 @@ function placeDiamonds() {
 
 function promptNewGame() {
     var replayTrigger=$("#replay");
-     replayTrigger.html("<h2>Press Any Key to Try Again!</h2>");
+     replayTrigger.html("<h2><strong>Press Any Key to Try Again!</strong></h2>");
      replayTrigger.append(replayTrigger);
      document.onkeyup = function(event) {
     var replayTrigger=$("#replay");
