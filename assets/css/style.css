@@ -1,0 +1,66 @@
+   
+   body {
+    background-image: url("../images/diamondwallpaper.jpg");
+   }
+   button {
+    display: inline-block;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 200px;
+}
+img {
+  width:200px;
+  height: 200px;
+}
+#replay {
+  color:orange;
+}
+.heading {
+  border-radius: 25px;
+  background:beige;
+  margin:50px;
+  padding:20px;
+  text-align:center;
+}
+.instructions {
+  border-radius: 25px;
+  background:beige;
+  margin:50px;
+  padding:20px;
+}
+.scoringInfo {
+  border-radius: 25px;
+  height:130px;
+  background-color:grey;
+  bottom-margin:20px;
+}
+.diamond-button {
+  margin:2px;
+  background-color:white;
+  border-radius:5px;
+  top-margin:10px;
+  
+}
+.diamond-image {
+/*  display:inline-block;*/
+      width: 10px;
+      height: 10px;
+    }
+    .buttons-options {
+      
+      width: 10px;
+      height: 10px;
+    }
+
+    .diamond-button-color {
+    color: darkcyan;
+  }
+  h1 {
+  	font-size:600%;
+  }
+
+  .letter-button-color {
+    color: darkcyan;
+  }
