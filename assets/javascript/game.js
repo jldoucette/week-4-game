@@ -46,7 +46,7 @@
           diamond2value=arrDiamondValues[1];
           diamond3value=arrDiamondValues[2];
           diamond4value=arrDiamondValues[3];
-          console.log("Exiting assignDiamondValues");
+          console.log("Exiting assignDiamondValues function");
 
         }
       }
@@ -136,11 +136,6 @@ function placeDiamonds() {
      scoreUpdate.append(scoreUpdate);
      promptNewGame();
     }
-    // else {
-    // var currentScoreMessage=$("#current");
-    //     currentScoreMessage.html("<h2 id='current-score'>Current Score: " + currentScore +"</h2>");
-    //     currentScoreMessage.append(currentScoreMessage);
-    // }
   }
 
 function promptNewGame() {
