@@ -1,26 +1,31 @@
-   
-   body {
-    background-image: url("../images/diamondwallpaper.jpg");
-    font-family: 'Josefin Slab', serif;
-   }
-   button {
-    display: inline-block;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-    vertical-align: top;
-    width: 200px;
+
+body {
+background-image: url("../images/diamondwallpaper.jpg");
+font-family: 'Josefin Slab', serif;
 }
+
+button {
+display: inline-block;
+height: 200px;
+padding: 0;
+margin: 0;
+vertical-align: top;
+width: 200px;
+}
+
 img {
   width:200px;
   height: 200px;
 }
+
 p {
   font-size:125%;
 }
+
 #replay {
   color:orange;
 }
+
 .heading {
   border-radius: 25px;
   background:beige;
@@ -29,6 +34,7 @@ p {
   text-align:center;
   font-weight:700;
 }
+
 #welcometext {
   font-size:500%;
 }
@@ -37,6 +43,7 @@ p {
   color:green;
   font-size:350%;
 }
+
 #loseStyle {
   color:red;
   font-size:350%;
@@ -62,7 +69,6 @@ p {
   
 }
 .diamond-image {
-/*  display:inline-block;*/
       width: 10px;
       height: 10px;
     }

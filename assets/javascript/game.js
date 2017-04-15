@@ -12,12 +12,10 @@
   var buttonValue;
 
 
-  console.log("Target: "+targetScoreValue);
  
   $(document).ready(function() {
-
+//Assign values to diamonds, checking for no duplicate values
   function assignDiamondValues() {
-    console.log("Started assignDiamondValues");
  
 
         for(var i = 0; i < numberofdiamonds; i++)
@@ -29,12 +27,11 @@
                 if(arrDiamondValues[j] == n)
                 {
                     uniquenum = false;
-                    console.log("Got a Duplicate");
+
                 }
             }
             if(uniquenum)
             {
-              console.log("Unique Value");
                 arrDiamondValues.push(n);
             }
             else
@@ -46,19 +43,14 @@
           diamond2value=arrDiamondValues[1];
           diamond3value=arrDiamondValues[2];
           diamond4value=arrDiamondValues[3];
-          console.log("Exiting assignDiamondValues function");
+
 
         }
       }
          assignDiamondValues();
-    console.log("Diamond Value Array: "+arrDiamondValues);
-    console.log("Initial D1: "+diamond1value);
-    console.log("Initial D2: "+diamond2value);
-    console.log("Initial D3: "+diamond3value);
-    console.log("Initial D4: "+diamond4value);
-
+//places diamonds on the document and sets up the scoring info
 function placeDiamonds() {
-  console.log("arrDiamondValues in Place Diamonds "+arrDiamondValues);
+
    for (var i=0; i < arrDiamondValues.length; i++) {
         picture=i+1;
         var DiamondButton=$("<img>");
@@ -69,12 +61,9 @@ function placeDiamonds() {
 
         DiamondButton.attr("data-diamondValue", arrDiamondValues[i]);
         DiamondButton.text("Value is " + arrDiamondValues[i]);
-        console.log("Diamond Button value is " + arrDiamondValues[i]);
-        console.log("Diamond Button is: "+ DiamondButton);
+
         $("#diamond-button").append(DiamondButton);
-        console.log("Value is: "+ arrDiamondValues[i]);
       }
-      console.log("supposed to have placed diamonds");
 
         var targetMessage=$("#target");
         targetMessage.html("<h2><strong>Target Score: </strong>" + targetScoreValue +"</h2>");
@@ -96,25 +85,20 @@ function placeDiamonds() {
         replayTrigger.append(replayTrigger);
 
 
-
+//gets value of clicked diamond button and adds to current score, then calls to check score
        $(".diamond-button").on("click", function() {
-        console.log("CurrentScore before click was "+ currentScore);
          var buttonValue=parseInt($(this).attr("data-diamondValue"));
-         console.log("Button Value is "+buttonValue);
         currentScore=currentScore+buttonValue;
-        console.log("CurrentScore is now "+currentScore);
         var currentScoreMessage=$("#current");
         currentScoreMessage.html("<h2 id='current-score'><strong>Current Score: </strong>" + currentScore +"</h2>");
         currentScoreMessage.append(currentScoreMessage);
         checkScore();
       });
     }
-     console.log("About to execute placeDiamonds");
     placeDiamonds();
   
-
+//checks score to see if win or lose or continue, updates appropriately
   function checkScore() {
-    console.log("checking score");
     if (currentScore==targetScoreValue) {
      $(".diamond-button").off("click"); 
      var winMessage=$("#target");
@@ -139,7 +123,7 @@ function placeDiamonds() {
      promptNewGame();
     }
   }
-
+//allows user to assess results and trigger a new round by pressing any key
 function promptNewGame() {
     var replayTrigger=$("#replay");
      replayTrigger.html("<h2><strong>Press Any Key to Try Again!</strong></h2>");
@@ -151,6 +135,7 @@ function promptNewGame() {
      continueGame();
    }
 }
+//resets appropriate variables for game round -- but not total wins or losses and turns off key event
   function continueGame() {
      document.onkeyup = function(event) {};
   numberofdiamonds=4;
@@ -161,7 +146,6 @@ function promptNewGame() {
   diamond3value;
   diamond4value;
   targetScoreValue = Math.floor(Math.random() * 101) + 19;
-   console.log("New Target: "+targetScoreValue);
   currentScore=0;
   buttonValue;  
  
